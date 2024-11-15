@@ -21,13 +21,13 @@ public class StudentController {
 	private StudentService studentService;
 	
 
-	@GetMapping("/allstudents")
-	public List<Student> listStudents(Model model) {
-		//model.addAttribute("students", studentService.getAllStudents());
+	@GetMapping("/students")
+	public String listStudents(Model model) {
+		model.addAttribute("students", studentService.getAllStudents());
 
-		List<Student> students = studentService.getAllStudents();
-		//return "students";
-		return students;
+		//List<Student> students = studentService.getAllStudents();
+		return "students";
+	//	return students;
 		
 	}
 
